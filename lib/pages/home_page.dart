@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -9,8 +10,17 @@ class Home extends StatelessWidget {
         title: Text("Home Page"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text("iam in Center"),
+      body: Column(
+        children: [
+          Center(child: Text("iam in Center")),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/login");
+                },
+                child: Text("Next")),
+          ),
+        ],
       ),
     );
   }
